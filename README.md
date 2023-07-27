@@ -1,18 +1,7 @@
-Easy!Appointments
-================
-
-<img src="http://easyappointments.org/img/easyappointments-banner.png">
-
-### Organize your business! Exploit human resources that can be used in other tasks more efficiently.
-
-**Easy!Appointments** is a highly customizable web application that allows your customers to book
+Highly customizable web application that allows your customers to book
 appointments with you via the web. Moreover, it provides the ability to sync your data with
 Google Calendar so you can use them with other services. It is an open source project and you
-can download and install it **even for commercial use**. Easy!Appointments will run smoothly with
-your existing website, because it can be installed in a single folder of the server and of course,
-both sites can share the same database.
-
-### Features
+can download and install-
 
 The project was designed to be flexible and reliable so as to be able to meet the needs of any
 kind of enterprise. You can read the main features of the system below:
