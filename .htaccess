@@ -1,0 +1,24 @@
+Options -Indexes
+Options +FollowSymlinks
+RewriteEngine On
+
+#Adjust default time zone
+SetEnv TZ America/Santiago
+
+#Recursively apply .htaccess
+suPHP_ConfigPath /home/sisecom/public_html
+
+# Redirect HTTPS to HTTP
+#RewriteCond %{HTTP:X-Forwarded-Proto} =https
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#Usar si no funciona el de arriba
+#RewriteCond %{HTTPS} on 
+#RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect HTTP to HTTS
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Sectigo\ DCV)?$
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
